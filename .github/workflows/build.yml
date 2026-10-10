@@ -1,9 +1,10 @@
 name: Build MarketBiru APK
 
-on:
+'on':
 workflow_dispatch:
 push:
-branches: [main]
+branches:
+- main
 
 jobs:
 build:
@@ -27,7 +28,7 @@ steps:
     with:
       gradle-version: '8.7'
 
-  - name: Build debug APK
+  - name: Build APK
     run: gradle assembleDebug
 
   - name: Upload APK
